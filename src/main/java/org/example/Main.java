@@ -28,18 +28,13 @@ public class Main {
         }
 
     public static boolean passwordContainsUpperAndLowercase(String password) {
-    boolean hasUppercase = true;
-    boolean hasLowercase = true;
 
         for (char c : password.toCharArray()) {
             if (Character.isUpperCase(c)) return true;
-            else {
-                Character.isLowerCase(c);
-            }
-            {
+            else if (Character.isLowerCase(c)){
                 return true;
+                }
             }
-        }
             return false;
         }
     }
