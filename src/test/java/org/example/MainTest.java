@@ -27,4 +27,24 @@ class MainTest {
         //THEN
         Assertions.assertFalse(actual);
     }
+
+    @Test
+    void passwordContainsDigit_shouldReturnTrue_whenContains5() {
+        //GIVEN
+        String password = "abcdef5";
+        //WHEN
+        boolean actual = Main.passwordContainsDigits(password);
+        //THEN
+        Assertions.assertTrue(actual);
+    }
+
+    @Test
+    void passwordContainsDigit_shouldReturnFalse_whenNotContains5() {
+        //GIVEN
+        String password = "abcdef";
+        //WHEN
+        boolean actual = Main.passwordContainsDigits(password);
+        //THEN
+        Assertions.assertFalse(actual);
+    }
 }
