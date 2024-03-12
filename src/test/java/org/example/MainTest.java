@@ -47,4 +47,46 @@ class MainTest {
         //THEN
         Assertions.assertFalse(actual);
     }
+
+    @Test
+    void passwordContainsUpperAndLowercase_shouldReturnTrue_whenContainsA() {
+        //GIVEN
+        String password = "Abc";
+        //WHEN
+        boolean actual = Main.passwordContainsUpperAndLowercase(password);
+        //THEN
+        Assertions.assertTrue(actual);
+    }
+    @Test
+    void passwordContainsUpperAndLowercase_shouldReturnFalse_whenNotContainsA() {
+        //GIVEN
+        String password = "abd";
+        //WHEN
+        boolean actual = Main.passwordContainsUpperAndLowercase(password);
+        //THEN
+        Assertions.assertFalse(actual);
+    }
+
+    @Test
+    void passwordContainsUpperAndLowercase_shouldReturnTrue_whenContainsAanda() {
+        //GIVEN
+        String password = "Aabc";
+        //WHEN
+        boolean actual = Main.passwordContainsUpperAndLowercase(password);
+        //THEN
+        Assertions.assertTrue(actual);
+    }
+
+    @Test
+    void passwordContainsUpperAndLowercase_shouldReturnTrue_whenNotContainsa() {
+        //GIVEN
+        String password = "ABC";
+        //WHEN
+        boolean actual = Main.passwordContainsUpperAndLowercase(password);
+        //THEN
+        Assertions.assertFalse(actual);
+    }
+
+
+
 }

@@ -5,6 +5,7 @@ public class Main {
         String password = "abcdef";
         passwordLengthIsMin8(password);
         passwordContainsDigits(password);
+        passwordContainsUpperAndLowercase(password);
     }
 
     public static boolean passwordLengthIsMin8(String password) {
@@ -25,8 +26,21 @@ public class Main {
             }
             return false;
         }
+
+    public static boolean passwordContainsUpperAndLowercase(String password) {
+    boolean hasUppercase = true;
+    boolean hasLowercase = true;
+
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(c)) return true;
+            else {
+                Character.isLowerCase(c);
+            }
+            {
+                return true;
+            }
+        }
+            return false;
+        }
     }
 
-    //public static boolean passwordContainsUpperAndLowercase(String password) {
-
-    }
