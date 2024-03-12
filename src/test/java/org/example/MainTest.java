@@ -87,6 +87,43 @@ class MainTest {
         Assertions.assertFalse(actual);
     }
 
+    @Test
+    void passwordIsStrong_ShouldReturnTrue_whenNotPassword1() {
+        //GIVEN
+        String password = "ABcde";
+        //WHEN
+        boolean actual = Main.passwordIsStrong(password);
+        //THEN
+        Assertions.assertTrue(actual);
+    }
+
+    void passwordIsStrong_ShouldReturnFalse_whenPassword1() {
+        //GIVEN
+        String password = "Password1";
+        //WHEN
+        boolean actual = Main.passwordIsStrong(password);
+        //THEN
+        Assertions.assertFalse(actual);
+    }
+
+    void passwordIsStrong_ShouldReturnTrue_whenNotAa345678() {
+        //GIVEN
+        String password = "ABcde";
+        //WHEN
+        boolean actual = Main.passwordIsStrong(password);
+        //THEN
+        Assertions.assertTrue(actual);
+    }
+
+    void passwordIsStrong_ShouldReturnFalse_whenAa345678() {
+        //GIVEN
+        String password = "Aa345678";
+        //WHEN
+        boolean actual = Main.passwordIsStrong(password);
+        //THEN
+        Assertions.assertFalse(actual);
 
 
-}
+
+
+    }
