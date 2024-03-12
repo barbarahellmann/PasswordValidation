@@ -57,6 +57,7 @@ class MainTest {
         //THEN
         Assertions.assertTrue(actual);
     }
+
     @Test
     void passwordContainsUpperAndLowercase_shouldReturnFalse_whenNotContainsA() {
         //GIVEN
@@ -78,7 +79,7 @@ class MainTest {
     }
 
     @Test
-    void passwordContainsUpperAndLowercase_shouldReturnTrue_whenNotContainsa() {
+    void passwordContainsUpperAndLowercase_shouldReturnFalse_whenNotContainsa() {
         //GIVEN
         String password = "ABC";
         //WHEN
@@ -106,7 +107,7 @@ class MainTest {
         Assertions.assertFalse(actual);
     }
 
-    void passwordIsStrong_ShouldReturnTrue_whenNotAa345678() {
+    void passwordIsStrong_ShouldReturnTrue_whenNotContainsAa345678() {
         //GIVEN
         String password = "ABcde";
         //WHEN
@@ -115,15 +116,21 @@ class MainTest {
         Assertions.assertTrue(actual);
     }
 
-    void passwordIsStrong_ShouldReturnFalse_whenAa345678() {
+    void passwordIsStrong_ShouldReturnFalse_whenContainsAa345678() {
         //GIVEN
         String password = "Aa345678";
         //WHEN
         boolean actual = Main.passwordIsStrong(password);
         //THEN
         Assertions.assertFalse(actual);
-
-
-
-
     }
+
+    void passwordContainsSpecialCharacters_ShouldReturnTrue_whenContainsQuestionmark() {
+        //GIVEN
+        String password = "Aa34567?";
+        //WHEN
+        boolean actual = Main.passwordContainsSpecialCharacters(password);
+        //THEN
+        Assertions.assertTrue(actual);
+    }
+}
