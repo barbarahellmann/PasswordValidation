@@ -3,8 +3,6 @@ package org.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class MainTest {
 
 
@@ -89,18 +87,18 @@ class MainTest {
     }
 
     @Test
-    void passwordIsStrong_ShouldReturnTrue_whenNotPassword1() {
+    void passwordIsStrong_ShouldReturnTrue_whenPasswordContains1() {
         //GIVEN
-        String password = "ABcde";
+        String password = "ABcde1";
         //WHEN
         boolean actual = Main.passwordIsStrong(password);
         //THEN
         Assertions.assertTrue(actual);
     }
 
-    void passwordIsStrong_ShouldReturnFalse_whenPassword1() {
+    void passwordIsStrong_ShouldReturnFalse_whenPasswordNotContains1() {
         //GIVEN
-        String password = "Password1";
+        String password = "Password";
         //WHEN
         boolean actual = Main.passwordIsStrong(password);
         //THEN

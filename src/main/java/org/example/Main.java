@@ -8,7 +8,6 @@ public class Main {
         passwordContainsUpperAndLowercase(password);
         passwordIsStrong(password);
         passwordContainsSpecialCharacters(password);
-
     }
 
     public static boolean passwordLengthIsMin8(String password) {
