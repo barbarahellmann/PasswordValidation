@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        String password = "abcdAsfsde5f";
+        String password = "abcdAsf?sde5f";
         passwordLengthIsMin8(password);
         passwordContainsDigits(password);
         passwordContainsUpperAndLowercase(password);
@@ -54,13 +54,13 @@ public class Main {
 
     public static boolean passwordIsStrong(String password) {
         String[] weakPasswords = {"Password", "abcdefgh"};
-        for (String element : weakPasswords) {
-            if (element.equals(password)) {
-                System.out.println("Strong password √");
+        for (String checkweak : weakPasswords) {
+            if (checkweak.equals(password)) {
+                System.out.println("Your password is too weak");
                 return false;
             }
         }
-        System.out.println("Your password is too weak");
+        System.out.println("Strong password √");
         return true;
     }
 
