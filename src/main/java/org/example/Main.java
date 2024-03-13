@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        String password = "abcdef";
+        String password = "abcdAsfsde5f";
         passwordLengthIsMin8(password);
         passwordContainsDigits(password);
         passwordContainsUpperAndLowercase(password);
@@ -34,16 +34,23 @@ public class Main {
     }
 
     public static boolean passwordContainsUpperAndLowercase(String password) {
+        boolean containsUppercase = false;
+        boolean containsLowercase = false;
+
         for (char c : password.toCharArray()) {
-            if (Character.isUpperCase(c)) return true;
-            else if (Character.isLowerCase(c)) {
-                System.out.println("Uppercase and lowercase √");
-                return true;
-            }
+            if (Character.isUpperCase(c)) {
+                containsUppercase = true;
+            } else if (Character.isLowerCase(c))
+                containsLowercase = true;
+        }
+        if (containsLowercase && containsUppercase) {
+            System.out.println("Uppercase and lowercase √");
+            return true;
         }
         System.out.println("Please use uppercase and lowercase");
         return false;
     }
+
 
     public static boolean passwordIsStrong(String password) {
         String[] weakPasswords = {"Password", "abcdefgh"};
