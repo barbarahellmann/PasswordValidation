@@ -87,24 +87,24 @@ class MainTest {
     }
 
     @Test
-    void passwordIsStrong_ShouldReturnTrue_whenPasswordContains1() {
+    void passwordIsStrong_ShouldReturnTrue_whenPasswordStrong() {
         //GIVEN
-        String password = "ABcde1";
+        String password = "ABcddfasdfe1";
         //WHEN
         boolean actual = Main.passwordIsStrong(password);
         //THEN
         Assertions.assertTrue(actual);
     }
-
-    void passwordIsStrong_ShouldReturnFalse_whenPasswordNotContains1() {
+    @Test
+    void passwordIsStrong_ShouldReturnFalse_whenPasswordWeak() {
         //GIVEN
-        String password = "Password";
+        String password = "abcdefgh";
         //WHEN
         boolean actual = Main.passwordIsStrong(password);
         //THEN
         Assertions.assertFalse(actual);
     }
-
+    @Test
     void passwordIsStrong_ShouldReturnTrue_whenNotContainsAa345678() {
         //GIVEN
         String password = "ABcde";
@@ -113,7 +113,7 @@ class MainTest {
         //THEN
         Assertions.assertTrue(actual);
     }
-
+    @Test
     void passwordIsStrong_ShouldReturnFalse_whenContainsAa345678() {
         //GIVEN
         String password = "Aa345678";
@@ -122,7 +122,7 @@ class MainTest {
         //THEN
         Assertions.assertFalse(actual);
     }
-
+    @Test
     void passwordContainsSpecialCharacters_ShouldReturnTrue_whenContainsQuestionmark() {
         //GIVEN
         String password = "Aa34567?";
@@ -130,5 +130,15 @@ class MainTest {
         boolean actual = Main.passwordContainsSpecialCharacters(password);
         //THEN
         Assertions.assertTrue(actual);
+    }
+
+    @Test
+    void passwordContainsSpecialCharacters_ShouldReturnFalse_whenNotContainsQuestionmark() {
+        //GIVEN
+        String password = "Aa34567";
+        //WHEN
+        boolean actual = Main.passwordContainsSpecialCharacters(password);
+        //THEN
+        Assertions.assertFalse(actual);
     }
 }

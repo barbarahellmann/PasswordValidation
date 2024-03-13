@@ -52,7 +52,7 @@ public class Main {
 
 
     public static boolean passwordIsStrong(String password) {
-        String[] weakPasswords = {"Password", "abcdefgh"};
+        String[] weakPasswords = {"Password", "abcdefgh", "Aa345678"};
         for (String checkWeak : weakPasswords) {
             if (checkWeak.equals(password)) {
                 System.out.println("Your password is too weak");
