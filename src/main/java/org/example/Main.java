@@ -13,6 +13,7 @@ public class Main {
 
     public static boolean passwordLengthIsMin8(String password) {
         if (password.length() >= 8) {
+            System.out.println("Length √");
             return true;
         } else {
             System.out.println("Password too short");
@@ -24,6 +25,7 @@ public class Main {
     public static boolean passwordContainsDigits(String password) {
         for (char c : password.toCharArray()) {
             if (Character.isDigit(c)) {
+                System.out.println("Digits √");
                 return true;
             }
         }
@@ -35,10 +37,11 @@ public class Main {
         for (char c : password.toCharArray()) {
             if (Character.isUpperCase(c)) return true;
             else if (Character.isLowerCase(c)) {
+                System.out.println("Uppercase and lowercase √");
                 return true;
             }
         }
-        System.out.println("Password should have uppercases and lowercases");
+        System.out.println("Please use uppercase and lowercase");
         return false;
     }
 
@@ -46,10 +49,11 @@ public class Main {
         String[] weakPasswords = {"Password", "abcdefgh"};
         for (String element : weakPasswords) {
             if (element.equals(password)) {
+                System.out.println("Strong password √");
                 return false;
             }
         }
-        System.out.println("Please use a strong Password");
+        System.out.println("Your password is too weak");
         return true;
     }
 
@@ -57,6 +61,7 @@ public class Main {
         String specialCharacters = "!@#$%^&*()-_+=|\\{}[]:;\"'<>,.?/";
         for (char c : password.toCharArray()) {
             if (specialCharacters.contains(String.valueOf(c))) {
+                System.out.println("Special character √");
                 return true;
             }
         }
