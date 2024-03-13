@@ -7,6 +7,7 @@ public class Main {
         passwordContainsDigits(password);
         passwordContainsUpperAndLowercase(password);
         passwordIsStrong(password);
+        passwordContainsSpecialCharacters(password);
 
     }
 
@@ -53,9 +54,8 @@ public class Main {
     }
 
     public static boolean passwordContainsSpecialCharacters(String password) {
-        String [] specialCharacters = {", !, @, #, $, %, ^, &, *, (, ), -, _, +, =, ~, `, [, ], {, }, |, :, ;, <, >, . , ?, /, "};
-        for (char c = 0; password.toCharArray() ; c++) {
-         //   password.toCharArray()) {
+        String specialCharacters = "!@#$%^&*()-_+=|\\{}[]:;\"'<>,.?/";
+        for (char c : password.toCharArray()) {
             if (specialCharacters.contains(String.valueOf(c))) {
                 return true;
             }
